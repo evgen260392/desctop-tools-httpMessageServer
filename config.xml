@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Настройки сервера.
+    
+    Для доступа к Веб-серверу необходимо пройти базовую авторизацию (Base64), 
+    измененить логина и пароля можно с помощью параметров login и password тега
+    Config.
+    
+    Что бы изменить порт по которому будет доступен сервер используйте параметр
+    port тега Config.
+    
+    Что бы добавить "контекст" необходимо добавить строку с тегом <Context> 
+    между тегами <ContextList>.
+    
+    Например:
+    
+    <ContextList>
+        <Context>test1</Context>
+        <Context>test2</Context>
+        <Context>test3</Context>
+    </ContextList>
+    
+    На каждый "контекст" будет создана своя отдельная очередь сообщений.
+--> 
+
+<Config login="admin" password="password" port="80">
+    <ContextList>
+        <Context>erp/hs/REQUEST/V1/JSON</Context>
+        <Context>erp/hs/RESPONSE/to_erp/JSON</Context>
+    </ContextList>
+</Config>
